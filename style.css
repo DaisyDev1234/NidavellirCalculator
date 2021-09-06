@@ -1,0 +1,52 @@
+input{
+  height:38px;
+  width:50px;
+  padding: 6px 10px;
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  background-color: #fff;
+  border: 1px solid #d4dada;
+  border-radius: 3px;
+}
+input:focus{
+  border-color: #386ca7;
+  outline: 0;
+}
+Button{
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+  background: #fff;
+  border-radius: 4px;
+  border:1px solid #d4dada;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  color: #6772e5;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.MinerButton{
+  color:orange;
+}
+Button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+}
+Button:active{
+  background-color: #f6f9fc;
+  transform: translateY(1px);
+  box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+}
+Button:hover{
+  border-color: #535054;
+}
+.container{
+  border: dashed black .25px;
+}
