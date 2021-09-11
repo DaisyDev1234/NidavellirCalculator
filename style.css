@@ -1,6 +1,6 @@
 input{
   height:38px;
-  width:50px;
+  width:100%;
   padding: 6px 10px;
   padding-top: 6px;
   padding-right: 10px;
@@ -32,8 +32,9 @@ Button{
   text-decoration: none;
   transition: all .15s ease;
 }
-.MinerButton{
+.AddButton{
   color:orange;
+  width:100%;
 }
 Button:hover{
   transform: translateY(-1px);

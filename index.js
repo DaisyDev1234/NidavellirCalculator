@@ -9,7 +9,18 @@ document.getElementById('Total').addEventListener('click', function () {
   document.getElementById('GreenOutput').innerHTML = sum;
 })
 
-document.getElementById('AddMore').addEventListener('click', function () {
-  document.getElementById('MoreRows').innerHTML += '<div class="row"> <div class="col"> <input class="GreenInput" value="0"> </div> <div class="col"> <input value="0"> </div><div class="col"> <input value="0"> </div> <div class="col"> <input value="0"></div><div class="col"> <input value="0"></div></div>'
+//document.getElementById('AddMore').addEventListener('click', function () {
+  //document.getElementById('MoreRows').innerHTML += '<div class="row"> <div class="col"> <input class="GreenInput" value="0"> </div> <div class="col"> <input value="0"> </div><div class="col"> <input value="0"> </div> <div class="col"> <input value="0"></div><div class="col"> <input value="0"></div></div>'
   //this needs to be updated to use .appendChild() instead of .innerHTML https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_appendchild
-})
+//})
+
+var add = document.querySelector(".add");
+var div = document.getElementById('destination');
+
+document.getElementById('AddMoreGreen').addEventListener('click', function () {
+  var input = document.createElement('input')
+  input.type = "text";
+  input.value = "0";
+  input.className = "GreenInput";
+  div.appendChild(input);
+});
