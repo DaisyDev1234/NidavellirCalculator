@@ -8,8 +8,8 @@ function TotalGreen(){
   let z; 
   z = 1;
   y = 1;
-  if(sum<=1){
-    NewResult = 1;
+  if(sum<1){
+    NewResult = 0;
   } else{
     for(let i = 2; i<= sum; i++){
     
@@ -34,8 +34,8 @@ function TotalPurple(){
   let z; 
   z = 3;
   y = 3;
-  if(sum<=1){
-    NewResult = 1;
+  if(sum<1){
+    NewResult = 0;
   } else{
     for(let i = 2; i<= sum; i++){
     
