@@ -35,6 +35,14 @@ Button{
 .AddButton{
   color:orange;
   width:100%;
+  font-size: x-large;
+}
+.SubTotal{
+  font-weight: bold;
+}
+.GrantTotal{
+  font-weight: bold;
+  font-size: x-large;
 }
 Button:hover{
   transform: translateY(-1px);
