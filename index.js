@@ -88,13 +88,13 @@ document.getElementById('Total').addEventListener('click', function () {
   TotalOrange.call();
   TotalBlue.call();
   TotalRed.call();
-  
+  var Additional = parseInt(document.getElementById('AdditionalPoints').value);
   var sum = 0;
   $('.SubTotal').each(function(){
   sum += parseFloat($(this).text());
   });
 
-  document.getElementById('GrantTotal').innerHTML = sum;
+  document.getElementById('GrantTotal').innerHTML = sum + Additional;
 });
 
 var add = document.querySelector(".add");
@@ -104,7 +104,7 @@ var add = document.querySelector(".add");
 
 document.getElementById('AddMoreGreen').addEventListener('click', function () {
   var input = document.createElement('input')
-  input.type = "text";
+  input.type = "number";
   input.value = "1";
   input.className = "GreenInput";
   GreenDestination.appendChild(input);
@@ -117,7 +117,7 @@ document.getElementById('RemoveGreen').addEventListener('click', function () {
 
 document.getElementById('AddMorePurple').addEventListener('click', function () {
   var input = document.createElement('input')
-  input.type = "text";
+  input.type = "number";
   input.value = "1";
   input.className = "PurpleInput";
   PurpleDestination.appendChild(input);
@@ -130,7 +130,7 @@ document.getElementById('RemovePurple').addEventListener('click', function () {
 
 document.getElementById('AddMoreOrange').addEventListener('click', function () {
   var input = document.createElement('input')
-  input.type = "text";
+  input.type = "number";
   input.value = "0";
   input.className = "OrangeInput";
   OrangeDestination.appendChild(input);
@@ -143,7 +143,7 @@ document.getElementById('RemoveOrange').addEventListener('click', function () {
 
 document.getElementById('AddMoreBlue').addEventListener('click', function () {
   var input = document.createElement('input')
-  input.type = "text";
+  input.type = "number";
   input.value = "0";
   input.className = "BlueInput";
   BlueDestination.appendChild(input);
@@ -156,7 +156,7 @@ document.getElementById('RemoveBlue').addEventListener('click', function () {
 
 document.getElementById('AddMoreRed').addEventListener('click', function () {
   var input = document.createElement('input')
-  input.type = "text";
+  input.type = "number";
   input.value = "0";
   input.className = "RedInput";
   RedDestination.appendChild(input);

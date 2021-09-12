@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
+  <title>Nidavellir Calculator</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -19,65 +19,78 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        Green
+        <p class= "ColorHeaders">Green</p>
       </div>
       <div class="col">
-        Purple
+        <p class = "ColorHeaders">Purple</p>
       </div>
       <div class="col">
-        Orange
+        <p class = "ColorHeaders">Orange</p>
       </div>
       <div class="col">
-        Blue
+        <p class = "ColorHeaders">Blue</p>
       </div>
       <div class="col">
-        Red
+        <p class = "ColorHeaders">Red</p>
       </div>
     </div>
-    <div class="row"> <!--First row input-->
+    <div class="row">
       <div class="col">
-        <input class="GreenInput" value="0">
+        <!--<input class="GreenInput" value="0">-->
         <div id = "GreenDestination"></div>
         <div id = "GreenOutput" class="SubTotal"></div>
         <button id = "AddMoreGreen" class = "AddButton">+</button>
         <button id = "RemoveGreen" class = "AddButton">-</button>
       </div>
       <div class="col">
-        <input class="PurpleInput" value="0">
+        <!--<input class="PurpleInput" value="0">-->
         <div id = "PurpleDestination"></div>
         <div id = "PurpleOutput" class="SubTotal"></div>
         <button id = "AddMorePurple" class = "AddButton">+</button>
         <button id = "RemovePurple" class = "AddButton">-</button>
       </div>
       <div class="col">
-        <input class="OrangeInput" value="0">
+        <!--<input class="OrangeInput" value="0"> -->
         <div id = "OrangeDestination"></div>
         <div id = "OrangeOutput" class="SubTotal"></div>
         <button id = "AddMoreOrange" class = "AddButton">+</button>
         <button id = "RemoveOrange" class = "AddButton">-</button>
       </div>
       <div class="col">
-        <input class="BlueInput" value="0">
+        <!--<input class="BlueInput" value="0">-->
         <div id = "BlueDestination"></div>
         <div id = "BlueOutput" class="SubTotal"></div>
         <button id = "AddMoreBlue" class = "AddButton">+</button>
         <button id = "RemoveBlue" class = "AddButton">-</button>
       </div>
       <div class="col">
-        <input class="RedInput" value="0">
+        <!--<input class="RedInput" value="0">-->
         <div id = "RedDestination"></div>
         <div id = "RedOutput" class="SubTotal"></div>
         <button id = "AddMoreRed" class = "AddButton">+</button>
         <button id = "RemoveRed" class = "AddButton">-</button>
       </div>
     </div>
-    <div id = "MoreRows">
+    <!--<div id = "MoreRows"></div>-->
+    <div class="row">
+      <div class="col">
+        <p class="ColorHeaders">Additional Points</p> 
+        <div>
+          <input type="number" value="0" id = "AdditionalPoints">
+        </div>
+      </div>
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
     </div>
     <div id = "GrantTotal" class="GrantTotal">Grand Total</div>
-    <button id = "Total" class = "MinerButton">Calculate Total</button>
+    <button id = "Total" class = "CalcButton">Calculate Total</button>
   </div>
-
-
 
   <script src="index.js"></script>
 </body>

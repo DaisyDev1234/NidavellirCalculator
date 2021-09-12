@@ -7,7 +7,7 @@ input{
   padding-bottom: 6px;
   padding-left: 10px;
   background-color: #fff;
-  border: 1px solid #d4dada;
+  border: 1px solid black;
   border-radius: 3px;
 }
 input:focus{
@@ -37,6 +37,21 @@ Button{
   width:100%;
   font-size: x-large;
 }
+.GreenInput{
+  background-color:lightgreen;
+}
+.PurpleInput{
+  background-color:#CBC3E3;
+}
+.OrangeInput{
+  background-color: #FFD580;
+}
+.BlueInput{
+  background-color: lightblue;
+}
+.RedInput{
+  background-color: #FF7F7F;
+}
 .SubTotal{
   font-weight: bold;
 }
@@ -47,15 +62,17 @@ Button{
 Button:hover{
   transform: translateY(-1px);
   box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  border-color: #535054;
 }
 Button:active{
-  background-color: #f6f9fc;
+  background-color:lightblue;
   transform: translateY(1px);
   box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
 }
-Button:hover{
-  border-color: #535054;
-}
 .container{
   border: dashed black .25px;
+}
+.ColorHeaders{
+  font-size:large;
+  text-align:center;
 }
