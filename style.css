@@ -18,6 +18,33 @@ select{
   height:38px;
   width:100%;
 }
+.GreenTile{
+  border: 1px solid gray;
+  background-color: lightgreen;
+}
+.PurpleTile{
+  border: 1px solid gray;
+  background-color: #7c5295;
+}
+.OrangeTile{
+  border: 1px solid gray;
+  background-color: #FFD580;
+}
+.BlueTile{
+  border: 1px solid gray;
+  background-color: #58CCED;
+}
+.RedTile{
+  border: 1px solid gray;
+  background-color: #FF7F7F;
+}
+.OtherTile{
+  border: 1px solid gray;
+  background-color: lightgray;
+}
+.TotalFormat{
+  display:inline-block;
+}
 Button{
   white-space: nowrap;
   display: inline-block;
@@ -47,7 +74,7 @@ Button{
   font-size: x-large;
 }
 .GreenInput{
-  background-color:lightgreen;
+  background-color:#9ccc65;
 }
 .GreenCommanderInput{
   background-color: darkgreen;
@@ -61,7 +88,7 @@ Button{
   color:white;
 }
 .OrangeInput{
-  background-color: #FFD580;
+  background-color: #ff9657;
 }
 .OrangeCommanderInput{
   background-color: darkorange;
@@ -75,7 +102,7 @@ Button{
   color:white;
 }
 .RedInput{
-  background-color: #FF7F7F;
+  background-color: #F6BDC0;
 }
 .RedCommanderInput{
   background-color: darkred;
@@ -83,6 +110,8 @@ Button{
 }
 .SubTotal{
   font-weight: bold;
+  background-color: lightgray;
+  text-align: center;
 }
 .GrantTotal{
   font-weight: bold;
@@ -104,4 +133,7 @@ Button:active{
 .ColorHeaders{
   font-size:large;
   text-align:center;
+  font-weight: bold;
+  color:white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
