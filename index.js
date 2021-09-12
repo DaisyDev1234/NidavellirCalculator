@@ -110,9 +110,25 @@ document.getElementById('AddMoreGreen').addEventListener('click', function () {
   GreenDestination.appendChild(input);
 });
 
+document.getElementById('AddGreenCommander').addEventListener('click', function () {
+  var input = document.createElement('select')
+  var option1 = document.createElement('option')
+  option1.text = "ARAL";
+  option1.value = "ARAL";
+  var option2 = document.createElement('option')
+  option2.text = "DAGDA";
+  option2.value = "DAGDA";
+  input.appendChild(option1);
+  input.appendChild(option2);
+  input.className = "GreenCommanderInput";
+  GreenDestination.appendChild(input);
+});
+
+
 document.getElementById('RemoveGreen').addEventListener('click', function () {
   var list = document.getElementById("GreenDestination");
-  list.removeChild(list.childNodes[0]);
+  var max =list.lastChild;
+  list.removeChild(max); 
 });
 
 document.getElementById('AddMorePurple').addEventListener('click', function () {
@@ -122,10 +138,24 @@ document.getElementById('AddMorePurple').addEventListener('click', function () {
   input.className = "PurpleInput";
   PurpleDestination.appendChild(input);
 });
+document.getElementById('AddPurpleCommander').addEventListener('click', function () {
+  var input = document.createElement('select')
+  var option1 = document.createElement('option')
+  option1.text = "AEGUR";
+  option1.value = "AEGUR";
+  var option2 = document.createElement('option')
+  option2.text = "BONFUR";
+  option2.value = "BONFUR";
+  input.appendChild(option1);
+  input.appendChild(option2);
+  input.className = "PurpleCommanderInput";
+  PurpleDestination.appendChild(input);
+});
 
 document.getElementById('RemovePurple').addEventListener('click', function () {
   var list = document.getElementById("PurpleDestination");
-  list.removeChild(list.childNodes[0]);
+  var max =list.lastChild;
+  list.removeChild(max); 
 });
 
 document.getElementById('AddMoreOrange').addEventListener('click', function () {
@@ -136,9 +166,24 @@ document.getElementById('AddMoreOrange').addEventListener('click', function () {
   OrangeDestination.appendChild(input);
 });
 
+document.getElementById('AddOrangeCommander').addEventListener('click', function () {
+  var input = document.createElement('select')
+  var option1 = document.createElement('option')
+  option1.text = "LOKDUR";
+  option1.value = "LOKDUR";
+  var option2 = document.createElement('option')
+  option2.text = "ZORAL";
+  option2.value = "ZORAL";
+  input.appendChild(option1);
+  input.appendChild(option2);
+  input.className = "OrangeCommanderInput";
+  OrangeDestination.appendChild(input);
+});
+
 document.getElementById('RemoveOrange').addEventListener('click', function () {
   var list = document.getElementById("OrangeDestination");
-  list.removeChild(list.childNodes[0]);
+  var max =list.lastChild;
+  list.removeChild(max); 
 });
 
 document.getElementById('AddMoreBlue').addEventListener('click', function () {
@@ -149,9 +194,24 @@ document.getElementById('AddMoreBlue').addEventListener('click', function () {
   BlueDestination.appendChild(input);
 });
 
+document.getElementById('AddBlueCommander').addEventListener('click', function () {
+  var input = document.createElement('select')
+  var option1 = document.createElement('option')
+  option1.text = "IDUNN";
+  option1.value = "IDUNN";
+  var option2 = document.createElement('option')
+  option2.text = "HOURYA";
+  option2.value = "HOURYA";
+  input.appendChild(option1);
+  input.appendChild(option2);
+  input.className = "BlueCommanderInput";
+  BlueDestination.appendChild(input);
+});
+
 document.getElementById('RemoveBlue').addEventListener('click', function () {
   var list = document.getElementById("BlueDestination");
-  list.removeChild(list.childNodes[0]);
+  var max =list.lastChild;
+  list.removeChild(max); 
 });
 
 document.getElementById('AddMoreRed').addEventListener('click', function () {
@@ -162,7 +222,22 @@ document.getElementById('AddMoreRed').addEventListener('click', function () {
   RedDestination.appendChild(input);
 });
 
+document.getElementById('AddRedCommander').addEventListener('click', function () {
+  var input = document.createElement('select')
+  var option1 = document.createElement('option')
+  option1.text = "KRAAL";
+  option1.value = "KRAAL";
+  var option2 = document.createElement('option')
+  option2.text = "TARAH";
+  option2.value = "TARAH";
+  input.appendChild(option1);
+  input.appendChild(option2);
+  input.className = "RedCommanderInput";
+  RedDestination.appendChild(input);
+});
+
 document.getElementById('RemoveRed').addEventListener('click', function () {
   var list = document.getElementById("RedDestination");
-  list.removeChild(list.childNodes[0]);
+  var max =list.lastChild;
+  list.removeChild(max); 
 });

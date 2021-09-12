@@ -14,6 +14,10 @@ input:focus{
   border-color: #386ca7;
   outline: 0;
 }
+select{
+  height:38px;
+  width:100%;
+}
 Button{
   white-space: nowrap;
   display: inline-block;
@@ -35,22 +39,47 @@ Button{
 .AddButton{
   color:orange;
   width:100%;
+  font-size: large;
+}
+.SubtractButton{
+  color:orange;
+  width:100%;
   font-size: x-large;
 }
 .GreenInput{
   background-color:lightgreen;
 }
+.GreenCommanderInput{
+  background-color: darkgreen;
+  color:white;
+}
 .PurpleInput{
   background-color:#CBC3E3;
+}
+.PurpleCommanderInput{
+  background-color: purple;
+  color:white;
 }
 .OrangeInput{
   background-color: #FFD580;
 }
+.OrangeCommanderInput{
+  background-color: darkorange;
+  color:white;
+}
 .BlueInput{
   background-color: lightblue;
 }
+.BlueCommanderInput{
+  background-color: darkblue;
+  color:white;
+}
 .RedInput{
   background-color: #FF7F7F;
+}
+.RedCommanderInput{
+  background-color: darkred;
+  color:white;
 }
 .SubTotal{
   font-weight: bold;
