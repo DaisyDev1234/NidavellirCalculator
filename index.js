@@ -1,9 +1,23 @@
 function TotalGreen(){
   var sum = 0;
-  let Result;
+  //let Result;
   $('.GreenInput').each(function(){
-  sum += parseFloat(this.value);
+    sum += parseFloat(this.value);
   });
+  var othersum = 0;
+  $('.GreenCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5 && othersum <7){
+    console.log("You got both!")
+    sum = sum + 5
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got ARAL!")
+    sum = sum + 2
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got DAGDA!")
+    sum = sum + 3
+  };
   let y; //starting value of 1, and represents previous value
   let z; 
   z = 1;
@@ -30,6 +44,20 @@ function TotalPurple(){
   $('.PurpleInput').each(function(){
   sum += parseFloat(this.value);
   });
+  var othersum = 0;
+  $('.PurpleCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5 && othersum <7){
+    console.log("You got both!")
+    sum = sum + 5
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got AEGUR!")
+    sum = sum + 2
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got BONFUR!")
+    sum = sum + 3
+  };
   let y; //starting value of 1, and represents previous value
   let z; 
   z = 3;
@@ -57,6 +85,23 @@ function TotalOrange(){
   sum += parseFloat(this.value);
   });
   var TotalOrange = document.querySelectorAll('.OrangeInput').length;
+  var othersum = 0;
+  $('.OrangeCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5 && othersum <7){
+    console.log("You got both!")
+    sum = sum + 4
+    TotalOrange = TotalOrange + 4
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got LOKDUR!")
+    sum = sum + 3
+    TotalOrange = TotalOrange + 1
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got ZORAL!")
+    sum = sum + 1
+    TotalOrange = TotalOrange + 3
+  };
   if(sum > 0){
   NewResult = sum * TotalOrange;
   } else{
@@ -70,6 +115,23 @@ function TotalBlue(){
   $('.BlueInput').each(function(){
   sum += parseFloat(this.value);
   });
+  var othersum = 0;
+  var TotalBlue = document.querySelectorAll('.BlueInput').length;
+  $('.BlueCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5 && othersum <7){
+    console.log("You got both!")
+    TotalBlue = TotalBlue + 2
+    sum = sum + 27 + (TotalBlue * 2)
+  }else if(othersum > 0 && othersum <2){
+    TotalBlue = TotalBlue + 1
+    console.log("You got IDUNN!")
+    sum = sum + 7 + (TotalBlue * 2)
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got HOURYA!")
+    sum = sum + 20
+  };
   document.getElementById('BlueOutput').innerHTML = sum;
 };
 
@@ -78,6 +140,24 @@ function TotalRed(){
   $('.RedInput').each(function(){
   sum += parseFloat(this.value);
   });
+  var othersum = 0;
+  var TotalRed = document.querySelectorAll('.RedInput').length;
+  $('.RedCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5 && othersum <7){
+    console.log("You got both!")
+    TotalRed = TotalRed + 3;
+    sum = sum + 21 + (TotalRed * 2) + TotalRed;
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got KRAAL!")
+    TotalRed = TotalRed + 2;
+    sum = sum + 7 + (TotalRed * 2)
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got TARAH!")
+    TotalRed = TotalRed + 1
+    sum = sum + 14 + TotalRed
+  };
   document.getElementById('RedOutput').innerHTML = sum;
 };
 
@@ -98,9 +178,6 @@ document.getElementById('Total').addEventListener('click', function () {
 });
 
 var add = document.querySelector(".add");
-//var GreenDestination = document.getElementById('GreenDestination');
-//var PurpleDestination = document.getElementById('PurpleDestination');
-
 
 document.getElementById('AddMoreGreen').addEventListener('click', function () {
   var input = document.createElement('input')
@@ -112,16 +189,54 @@ document.getElementById('AddMoreGreen').addEventListener('click', function () {
 
 document.getElementById('AddGreenCommander').addEventListener('click', function () {
   var input = document.createElement('select')
-  var option1 = document.createElement('option')
-  option1.text = "ARAL";
-  option1.value = "ARAL";
-  var option2 = document.createElement('option')
-  option2.text = "DAGDA";
-  option2.value = "DAGDA";
-  input.appendChild(option1);
-  input.appendChild(option2);
-  input.className = "GreenCommanderInput";
-  GreenDestination.appendChild(input);
+  var othersum = 0;
+  $('.GreenCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5){
+    console.log("You got both already!");
+    alert("You have both already!");
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got ARAL already!")
+    var option2 = document.createElement('option')
+    option2.text = "DAGDA";
+    option2.value = 5;
+    input.appendChild(option2);
+    input.className = "GreenCommanderInput";
+    GreenDestination.appendChild(input);
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got DAGDA already!")
+    var option1 = document.createElement('option')
+    option1.text = "ARAL";
+    option1.value = 1;
+    input.appendChild(option1);
+    input.className = "GreenCommanderInput";
+    GreenDestination.appendChild(input);
+  }else{
+    var option1 = document.createElement('option')
+    option1.text = "ARAL";
+    option1.value = 1;
+    var option2 = document.createElement('option')
+    option2.text = "DAGDA";
+    option2.value = 5;
+    input.appendChild(option1);
+    input.appendChild(option2);
+    input.className = "GreenCommanderInput";
+    GreenDestination.appendChild(input);
+  };
+
+
+  //var input = document.createElement('select')
+  //var option1 = document.createElement('option')
+  //option1.text = "ARAL";
+  //option1.value = 1;
+  //var option2 = document.createElement('option')
+  //option2.text = "DAGDA";
+  //option2.value = 5;
+  //input.appendChild(option1);
+  //input.appendChild(option2);
+  //input.className = "GreenCommanderInput";
+  //GreenDestination.appendChild(input);
 });
 
 
@@ -140,16 +255,53 @@ document.getElementById('AddMorePurple').addEventListener('click', function () {
 });
 document.getElementById('AddPurpleCommander').addEventListener('click', function () {
   var input = document.createElement('select')
-  var option1 = document.createElement('option')
-  option1.text = "AEGUR";
-  option1.value = "AEGUR";
-  var option2 = document.createElement('option')
-  option2.text = "BONFUR";
-  option2.value = "BONFUR";
-  input.appendChild(option1);
-  input.appendChild(option2);
-  input.className = "PurpleCommanderInput";
-  PurpleDestination.appendChild(input);
+
+  var othersum = 0;
+  $('.PurpleCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5){
+    console.log("You got both already!");
+    alert("You have both already!");
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got AEGUR already!")
+    var option2 = document.createElement('option')
+    option2.text = "BONFUR";
+    option2.value = 5;
+    input.appendChild(option2);
+    input.className = "PurpleCommanderInput";
+    PurpleDestination.appendChild(input);
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got BONFUR already!")
+    var option1 = document.createElement('option')
+    option1.text = "AEGUR";
+    option1.value = 1;
+    input.appendChild(option1);
+    input.className = "PurpleCommanderInput";
+    PurpleDestination.appendChild(input);
+  }else{
+    var option1 = document.createElement('option')
+    option1.text = "AEGUR";
+    option1.value = 1;
+    var option2 = document.createElement('option')
+    option2.text = "BONFUR";
+    option2.value = 5;
+    input.appendChild(option1);
+    input.appendChild(option2);
+    input.className = "PurpleCommanderInput";
+    PurpleDestination.appendChild(input);
+  };
+
+  //var option1 = document.createElement('option')
+  //option1.text = "AEGUR";
+  //option1.value = 1;
+  //var option2 = document.createElement('option')
+  //option2.text = "BONFUR";
+  //option2.value = 5;
+  //input.appendChild(option1);
+  //input.appendChild(option2);
+  //input.className = "PurpleCommanderInput";
+  //PurpleDestination.appendChild(input);
 });
 
 document.getElementById('RemovePurple').addEventListener('click', function () {
@@ -168,16 +320,54 @@ document.getElementById('AddMoreOrange').addEventListener('click', function () {
 
 document.getElementById('AddOrangeCommander').addEventListener('click', function () {
   var input = document.createElement('select')
-  var option1 = document.createElement('option')
-  option1.text = "LOKDUR";
-  option1.value = "LOKDUR";
-  var option2 = document.createElement('option')
-  option2.text = "ZORAL";
-  option2.value = "ZORAL";
-  input.appendChild(option1);
-  input.appendChild(option2);
-  input.className = "OrangeCommanderInput";
-  OrangeDestination.appendChild(input);
+
+  var othersum = 0;
+  $('.OrangeCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5){
+    console.log("You got both already!");
+    alert("You have both already!");
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got LOKDUR already!")
+    var option2 = document.createElement('option')
+    option2.text = "ZORAL";
+    option2.value = 5;
+    input.appendChild(option2);
+    input.className = "OrangeCommanderInput";
+    OrangeDestination.appendChild(input);
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got ZORAL already!")
+    var option1 = document.createElement('option')
+    option1.text = "LOKDUR";
+    option1.value = 1;
+    input.appendChild(option1);
+    input.className = "OrangeCommanderInput";
+    OrangeDestination.appendChild(input);
+  }else{
+    var option1 = document.createElement('option')
+    option1.text = "LOKDUR";
+    option1.value = 1;
+    var option2 = document.createElement('option')
+    option2.text = "ZORAL";
+    option2.value = 5;
+    input.appendChild(option1);
+    input.appendChild(option2);
+    input.className = "OrangeCommanderInput";
+    OrangeDestination.appendChild(input);
+  };
+
+
+  //var option1 = document.createElement('option')
+  //option1.text = "LOKDUR";
+  //option1.value = 1;
+  //var option2 = document.createElement('option')
+  //option2.text = "ZORAL";
+  //option2.value = 5;
+  //input.appendChild(option1);
+  //input.appendChild(option2);
+  //input.className = "OrangeCommanderInput";
+  //OrangeDestination.appendChild(input);
 });
 
 document.getElementById('RemoveOrange').addEventListener('click', function () {
@@ -196,16 +386,53 @@ document.getElementById('AddMoreBlue').addEventListener('click', function () {
 
 document.getElementById('AddBlueCommander').addEventListener('click', function () {
   var input = document.createElement('select')
-  var option1 = document.createElement('option')
-  option1.text = "IDUNN";
-  option1.value = "IDUNN";
-  var option2 = document.createElement('option')
-  option2.text = "HOURYA";
-  option2.value = "HOURYA";
-  input.appendChild(option1);
-  input.appendChild(option2);
-  input.className = "BlueCommanderInput";
-  BlueDestination.appendChild(input);
+
+  var othersum = 0;
+  $('.BlueCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5){
+    console.log("You got both already!");
+    alert("You have both already!");
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got IDUNN already!")
+    var option2 = document.createElement('option')
+    option2.text = "HOURYA";
+    option2.value = 5;
+    input.appendChild(option2);
+    input.className = "BlueCommanderInput";
+    BlueDestination.appendChild(input);
+  }else if(othersum > 4 && othersum <6){
+    console.log("You got HOURYA already!")
+    var option1 = document.createElement('option')
+    option1.text = "IDUNN";
+    option1.value = 1;
+    input.appendChild(option1);
+    input.className = "BlueCommanderInput";
+    BlueDestination.appendChild(input);
+  }else{
+    var option1 = document.createElement('option')
+    option1.text = "IDUNN";
+    option1.value = 1;
+    var option2 = document.createElement('option')
+    option2.text = "HOURYA";
+    option2.value = 5;
+    input.appendChild(option1);
+    input.appendChild(option2);
+    input.className = "BlueCommanderInput";
+    BlueDestination.appendChild(input);
+  };
+
+  //var option1 = document.createElement('option')
+  //option1.text = "IDUNN";
+  //option1.value = 1;
+  //var option2 = document.createElement('option')
+  //option2.text = "HOURYA";
+  //option2.value = 5;
+  //input.appendChild(option1);
+  //input.appendChild(option2);
+  //input.className = "BlueCommanderInput";
+  //BlueDestination.appendChild(input);
 });
 
 document.getElementById('RemoveBlue').addEventListener('click', function () {
@@ -224,16 +451,52 @@ document.getElementById('AddMoreRed').addEventListener('click', function () {
 
 document.getElementById('AddRedCommander').addEventListener('click', function () {
   var input = document.createElement('select')
-  var option1 = document.createElement('option')
-  option1.text = "KRAAL";
-  option1.value = "KRAAL";
-  var option2 = document.createElement('option')
-  option2.text = "TARAH";
-  option2.value = "TARAH";
-  input.appendChild(option1);
-  input.appendChild(option2);
-  input.className = "RedCommanderInput";
-  RedDestination.appendChild(input);
+
+  var othersum = 0;
+  $('.RedCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  if(othersum > 5){
+    console.log("You got both already!");
+    alert("You have both already!");
+  }else if(othersum > 0 && othersum <2){
+    console.log("You got KRAAL already!")
+    var option2 = document.createElement('option')
+    option2.text = "TARAH";
+    option2.value = 5;
+    input.appendChild(option2);
+    input.className = "RedCommanderInput";
+    RedDestination.appendChild(input);
+  }else if(othersum > 4 && othersum <6){
+    var option1 = document.createElement('option')
+    option1.text = "KRAAL";
+    option1.value = 1;
+    input.appendChild(option1);
+    input.className = "RedCommanderInput";
+    RedDestination.appendChild(input);
+  }else{
+    var option1 = document.createElement('option')
+    option1.text = "KRAAL";
+    option1.value = 1;
+    var option2 = document.createElement('option')
+    option2.text = "TARAH";
+    option2.value = 5;
+    input.appendChild(option1);
+    input.appendChild(option2);
+    input.className = "RedCommanderInput";
+    RedDestination.appendChild(input);
+  };
+
+  //var option1 = document.createElement('option')
+  //option1.text = "KRAAL";
+  //option1.value = 1;
+  //var option2 = document.createElement('option')
+  //option2.text = "TARAH";
+  //option2.value = 5;
+  //input.appendChild(option1);
+  //input.appendChild(option2);
+  //input.className = "RedCommanderInput";
+  //RedDestination.appendChild(input);
 });
 
 document.getElementById('RemoveRed').addEventListener('click', function () {
