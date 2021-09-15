@@ -161,6 +161,58 @@ function TotalRed(){
   document.getElementById('RedOutput').innerHTML = sum;
 };
 
+
+function TotalOther(){
+  var sum = 0;
+  $('.OtherInput').each(function(){
+  sum += parseFloat(this.value);
+  });
+  var othersum = 0;
+  //var TotalRed = document.querySelectorAll('.RedInput').length;
+  $('.OtherCommanderInput').each(function(){
+    othersum  += parseFloat(this.value);
+  });
+  var DwergCheck = othersum % 10;
+  console.log("Start Here")
+  console.log(DwergCheck)
+  console.log(othersum)
+  console.log(sum)
+    if(othersum < 59){
+      if(othersum <= 56 && othersum >0 && DwergCheck != 0){
+        console.log("Draft Depending on Who is There Now")
+        if(DwergCheck === 3){
+          //You have SKAA;
+          sum = sum + 17;
+          console.log("SKAA bonus achieved")
+        }else if(DwergCheck === 6){
+          //input.appendChild(option1);
+          //You have GRID
+          sum = sum + 7;
+        }else if(DwergCheck === 9){
+          //You have both
+          sum = sum + 23;
+        }
+      }
+      if(othersum >= 10 && othersum <=19){//Account for DWERGS selected
+        console.log("DWERG 1 Bonus")
+        sum = sum + 13;
+      }else if(othersum >= 20 && othersum <=29){
+        console.log("DWERG 2 Bonus")
+        sum = sum + 40;
+      }else if(othersum >= 30 && othersum <=39){
+        console.log("DWERG 3 Bonus")
+        sum = sum + 81;
+      }else if(othersum >= 40 && othersum <=49){
+        sum = sum + 108;
+      }else if(othersum >= 50 && othersum <=59){
+        sum = sum + 135;
+      };
+    }else if(othersum === 59){
+      sum = sum + 158;
+    }
+  document.getElementById('OtherOutput').innerHTML = sum;
+};
+
 ///GRAND TOTAL
 document.getElementById('Total').addEventListener('click', function () {
   TotalGreen.call();
@@ -168,13 +220,13 @@ document.getElementById('Total').addEventListener('click', function () {
   TotalOrange.call();
   TotalBlue.call();
   TotalRed.call();
-  var Additional = parseInt(document.getElementById('AdditionalPoints').value);
+  TotalOther.call();
+  //var Additional = parseInt(document.getElementById('AdditionalPoints').value);
   var sum = 0;
   $('.SubTotal').each(function(){
   sum += parseFloat($(this).text());
   });
-
-  document.getElementById('GrantTotal').innerHTML = sum + Additional;
+  document.getElementById('GrantTotal').innerHTML = sum;
 });
 
 var add = document.querySelector(".add");
@@ -195,7 +247,7 @@ document.getElementById('AddGreenCommander').addEventListener('click', function 
   });
   if(othersum > 5){
     console.log("You got both already!");
-    alert("You have both already!");
+    alert("You have all hunter heros!");
   }else if(othersum > 0 && othersum <2){
     console.log("You got ARAL already!")
     var option2 = document.createElement('option')
@@ -262,7 +314,7 @@ document.getElementById('AddPurpleCommander').addEventListener('click', function
   });
   if(othersum > 5){
     console.log("You got both already!");
-    alert("You have both already!");
+    alert("You have all blacksmith heros!");
   }else if(othersum > 0 && othersum <2){
     console.log("You got AEGUR already!")
     var option2 = document.createElement('option')
@@ -327,7 +379,7 @@ document.getElementById('AddOrangeCommander').addEventListener('click', function
   });
   if(othersum > 5){
     console.log("You got both already!");
-    alert("You have both already!");
+    alert("You have all miner heros!");
   }else if(othersum > 0 && othersum <2){
     console.log("You got LOKDUR already!")
     var option2 = document.createElement('option')
@@ -393,7 +445,7 @@ document.getElementById('AddBlueCommander').addEventListener('click', function (
   });
   if(othersum > 5){
     console.log("You got both already!");
-    alert("You have both already!");
+    alert("You have all explorer heros!");
   }else if(othersum > 0 && othersum <2){
     console.log("You got IDUNN already!")
     var option2 = document.createElement('option')
@@ -458,7 +510,7 @@ document.getElementById('AddRedCommander').addEventListener('click', function ()
   });
   if(othersum > 5){
     console.log("You got both already!");
-    alert("You have both already!");
+    alert("You have all warrior heros!");
   }else if(othersum > 0 && othersum <2){
     console.log("You got KRAAL already!")
     var option2 = document.createElement('option')
@@ -501,6 +553,84 @@ document.getElementById('AddRedCommander').addEventListener('click', function ()
 
 document.getElementById('RemoveRed').addEventListener('click', function () {
   var list = document.getElementById("RedDestination");
+  var max =list.lastChild;
+  list.removeChild(max); 
+});
+
+document.getElementById('AddMoreOther').addEventListener('click', function () {
+  var input = document.createElement('input')
+  input.type = "number";
+  input.value = "0";
+  input.className = "OtherInput";
+  OtherDestination.appendChild(input);
+});
+
+document.getElementById('AddOtherCommander').addEventListener('click', function () {
+  var input = document.createElement('select')
+  var othersum = 0;
+  console.log("helllooo!");
+  //var TotalRed = document.querySelectorAll('.RedInput').length;
+  $('.OtherCommanderInput').each(function(){
+    othersum += parseFloat(this.value);
+  });
+  var DwergCheck = othersum % 10;
+  var DwergCount = othersum /10;
+  console.log(othersum);
+  console.log(DwergCheck);
+  var option1 = document.createElement('option');
+  option1.text = "SKAA";
+  option1.value = 3;
+  var option2 = document.createElement('option');
+  option2.text = "GRID";
+  option2.value = 6;
+  var option3 = document.createElement('option');
+  option3.text = "DWERG";
+  option3.value = 10;
+  if(othersum < 59){
+    if(othersum <= 49 && othersum >0 && DwergCheck != 0){
+      console.log("Draft Depending on Who is There Now")
+      if(DwergCheck === 3){
+        //input.appendChild(option1);
+        input.appendChild(option2);
+        input.appendChild(option3);
+        input.className = "OtherCommanderInput";
+        OtherDestination.appendChild(input);
+      }else if(DwergCheck === 6){
+        input.appendChild(option1);
+        //input.appendChild(option2);
+        input.appendChild(option3);
+        input.className = "OtherCommanderInput";
+        OtherDestination.appendChild(input);
+      }else if(DwergCheck === 9){
+        //input.appendChild(option1);
+        //input.appendChild(option2);
+        input.appendChild(option3);
+        input.className = "OtherCommanderInput";
+        OtherDestination.appendChild(input);
+      }
+    }else if(othersum === 50){
+      console.log("Draft Depending on Who is There Now...Just not DWERG...")
+        input.appendChild(option1);
+        input.appendChild(option2);
+        //input.appendChild(option3);
+        input.className = "OtherCommanderInput";
+        OtherDestination.appendChild(input);
+    }else{
+        console.log("Draft Anyone!")
+        input.appendChild(option1);
+        input.appendChild(option2);
+        input.appendChild(option3);
+        input.className = "OtherCommanderInput";
+        OtherDestination.appendChild(input);
+    };
+  }else{
+    console.log("You have all the commanders!");
+    alert("You have all the commanders!");
+  }
+});
+
+document.getElementById('RemoveOther').addEventListener('click', function () {
+  var list = document.getElementById("OtherDestination");
   var max =list.lastChild;
   list.removeChild(max); 
 });
